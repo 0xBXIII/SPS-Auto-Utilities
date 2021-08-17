@@ -1,0 +1,5 @@
+hive-node: https://api.hive.blog
+accounts:
+  - name: HIVE-ACCOUNT-NAME
+    posting-key: POSTING-KEY
+    action: stake

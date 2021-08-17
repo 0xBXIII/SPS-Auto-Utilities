@@ -1,0 +1,1 @@
+*/15 * * * * su -c '/app/cron-wrapper.sh' -s /bin/bash root  > /proc/1/fd/1
