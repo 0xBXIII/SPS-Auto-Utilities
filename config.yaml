@@ -1,5 +1,11 @@
 hive-node: https://api.hive.blog
 accounts:
-  - name: HIVE-ACCOUNT-NAME
-    posting-key: POSTING-KEY
-    action: stake
+  - name: ACCOUNT_1
+    posting-key: POSTING_KEY
+    actions:
+      - stake
+      - claim-hive-sps-airdrop
+  - name: ACCOUNT_2
+    posting-key: POSTING_KEY
+    actions:
+      - claim-hive-sps-airdrop

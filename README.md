@@ -10,8 +10,6 @@ A Docker Compose config file is included for convenience.
 
 It is worth noting that there is an impact to your HIVE resource credits through the use of the script. You should monitor the impact which may vary depending on network conditions and your amount of resource credits.
 
-Currently, only the `stake` action is supported and requires a minimum of the Posting Key for the HIVE account.
-
 ## Usage
 
 The easiest way to get a fully running instance is to have Docker installed, clone this repo, modify the configuration file with your accounts, then start the Docker Compose stack (`docker compose up -d`) which will mount the config file and restart the container on system boot.
@@ -22,7 +20,13 @@ Editing the `sps-auto-cron` file allows for customizing the frequency of the scr
 
 ### Stake
 
-The `stake` action checks the amount of liquid in-game SPS for a user's account and stakes the amount. As a result of this action, any claimable SPS is then claimed and will be in the liquid in-game balance. At a minimum, account's Posting Key is required for this action. This effectively allows auto compounding of the staked SPS.
+The `stake` action checks the amount of liquid in-game SPS for a user's account and stakes the amount. As a result of this action, any claimable SPS is then claimed and will be in the liquid in-game balance. At a minimum, the account's Posting Key is required for this action. This effectively allows auto compounding of the staked SPS.
+
+###  Claim
+
+The `claim-hive-sps-airdrop` action claims the SPS airdrop allocation granted based on HIVE Engine/in game assets. At a minimum, the account's Posting Key is required for this action. An auth token for Splinterlands is also needed, but is generated automatically by logging in via the account name and Posting Key.
+
+Other blockchain claims are not currently supported.
 
 ## Limitations
 This script is provided without warranty and may not work in all system configurations. A reliance on the Splinterlands API is needed to check the stakeable amount, and the script may not be able to function if the game is in maintenance mode. 
