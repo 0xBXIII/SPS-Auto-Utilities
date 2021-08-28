@@ -41,6 +41,7 @@ def claim_hive_sps_airdrop(hive_name: str, posting_key: str):
     result = requests.get(f"https://ec-api.splinterlands.com/players/claim_sps_airdrop?platform=hive&address={hive_name}"
                  f"&sig={claim_signature}&token={token}&username={hive_name}&ts={timestamp}")
     if result.json()['success'] is True:
+      timestamp = datetime.now()
       print(f"{timestamp} | {hive_name} | Claimed SPS Airdrop from HIVE Assets", file=sys.stderr)
 
   except:
